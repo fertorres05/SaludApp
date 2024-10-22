@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/purple_200"
@@ -19,7 +19,7 @@
         android:id="@+id/btnHello"
         />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -27,6 +27,8 @@
         app:layout_constraintBottom_toTopOf="@id/btnHello"
         android:layout_margin="14dp"
         android:id="@+id/etName"
+        android:singleLine="true"
+        android:maxLines="1"
         />
 
     <TextView
