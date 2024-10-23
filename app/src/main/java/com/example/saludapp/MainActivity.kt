@@ -1,5 +1,6 @@
 package com.example.saludapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -27,23 +28,28 @@ class MainActivity : AppCompatActivity() {
         val btnHello: AppCompatButton =findViewById(R.id.btnHello)
 
 
-
         btnHello.setOnClickListener {
             val etName: AppCompatEditText = findViewById(R.id.etName)
-
             val name = etName.text.toString()
-            Log.i("Test", "Botón pulsado")
-            //Toast.makeText(this, "Hola $name!",
-            //Toast.LENGTH_LONG).show()
-            if (name.isNotEmpty()) {
-                Snackbar.make(btnHello, "Hola $name!", Snackbar.LENGTH_SHORT)
-                    .setAnchorView(btnHello)
-                    .setAction("CLOSE") { finishAffinity() }
-                    .show()
-                    etName.setText(null)
-            }
-
+            val intentGA = Intent(this, GreetingActivity::class.java)
+            intentGA.putExtra("EXTRA_NAME", name)
+            startActivity(intentGA)
 
         }
     }
 }
+
+
+//val etName: AppCompatEditText = findViewById(R.id.etName)
+
+//            val name = etName.text.toString()
+//           Log.i("Test", "Botón pulsado")
+//Toast.makeText(this, "Hola $name!",
+//Toast.LENGTH_LONG).show()
+
+//         if (name.isNotEmpty()) {
+//           Snackbar.make(btnHello, "Hola $name!", Snackbar.LENGTH_SHORT)
+//             .setAnchorView(btnHello)
+//           .setAction("CLOSE") { finishAffinity() }
+//         .show()
+//   etName.setText(null)
